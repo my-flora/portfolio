@@ -14,9 +14,9 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 64px 24px 48px;
+    padding: 56px 32px 40px;
 }
 
 /* ---------- 顶部标题区 ---------- */
@@ -27,20 +27,20 @@ header {
 
 /* 参考图顶部那个小圆点 */
 header .dot {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #f0446e;
-    margin: 0 auto 28px;
+    margin: 0 auto 24px;
     box-shadow: 0 0 24px rgba(240, 68, 110, 0.45);
 }
 
 header h1 {
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     font-weight: 800;
     color: #ffffff;
     letter-spacing: -0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     line-height: 1.25;
 }
 
@@ -51,16 +51,16 @@ header p {
     margin: 0 auto;
 }
 
-/* 标题区和卡片之间再加一段距离 */
+/* 标题区和卡片之间距离 */
 header {
-    margin-bottom: 80px;
+    margin-bottom: 56px;
 }
 
-/* ---------- 作品卡片 ---------- */
+/* ---------- 作品卡片：桌面强制三列 ---------- */
 .works-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
 }
 
 .work {
@@ -82,7 +82,7 @@ header {
 
 .work img {
     width: calc(100% - 24px);
-    height: 200px;
+    height: 190px;
     object-fit: cover;
     display: block;
     margin: 12px 12px 0;
@@ -91,7 +91,7 @@ header {
 }
 
 .work-info {
-    padding: 16px 22px 24px;
+    padding: 16px 22px 22px;
 }
 
 .work-title {
@@ -120,19 +120,29 @@ header {
 /* ---------- 页脚 ---------- */
 footer {
     text-align: center;
-    margin-top: 64px;
+    margin-top: 40px;
     color: #5c6f74;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 footer i {
     color: #f0446e;
 }
 
-/* ---------- 移动端 ---------- */
+/* ---------- 平板：两列 ---------- */
+@media (max-width: 800px) {
+    .works-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- 移动端：单列 ---------- */
 @media (max-width: 600px) {
+    .works-container {
+        grid-template-columns: 1fr;
+    }
     header h1 {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
     .work img {
         height: 170px;
